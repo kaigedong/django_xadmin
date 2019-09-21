@@ -61,6 +61,24 @@ static: js, css, pic 等文件。
 templates: 存放html 文件
 ```
 
+现在目录结构为：
+```
+❯ tree Helloworld
+Helloworld
+├── apps
+├── Helloworld
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── log
+├── manage.py
+├── media
+├── static
+└── templates
+
+```
+
 > 新建了`templates`与`static`文件夹，还不能直接使用，需要进行配置
 
 #### 2.1.2 `templates`与`static`文件夹设置
