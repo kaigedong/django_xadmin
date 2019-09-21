@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
 ```
 # python3 中 `pip install pymysql`
 
-# 在项目文件夹下的 `_init_.py` 添加如下代码即可:
+# 在项目文件夹下的 `_init_.py` 添加如下代码即可:(如果已经安装了mysqlclient则加如下面两行会出错。不加即可使用)
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -157,7 +157,6 @@ python manage.py migrate
 ```
 
 
-
 总结一下我们上面所做的配置：
 
 1. 安装并配置了`pymysql`插件，使得Django能够访问mysql;
@@ -171,7 +170,9 @@ python manage.py migrate
 
 #### 2.2.1 建立项目
 
-首先新建一个app，叫做message，它放在apps文件夹下 (apps文件夹有`__init__.py`，表示它能作为包导入)。
+首先新建一个app，叫做message，`python manage.py startapp message && mv message apps`
+`cd apps && touch __init__.py`
+它放在apps文件夹下 (apps文件夹有`__init__.py`，表示它能作为包导入)。
 
 然后，在view中写上`form`的view：
 
@@ -226,7 +227,6 @@ INSTALLED_APPS = [
 #### 2.2.3 网页查询: 传数据到后台
 
 ![1553178010027](第一二三章_Django基础.assets/1553178010027.png)
-
 
 
 当我们点击提交，该`form`表单将把数据提交给`action`指定的`url`，这里``url`是`/form/` (后台将由`/form/`对应的view进行处理)。
@@ -350,7 +350,7 @@ Django提供和很多函数，以避免插入太多Python逻辑，更多函数�
 
 ```
 安装mysql：
-sudo pacman -S mariadb mariadb-clients # arch 平台
+sudo pacman -S mariadb # arch 平台
 
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql # 初始化MariaDb的数据目录了
 
