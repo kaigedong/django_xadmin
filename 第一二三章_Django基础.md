@@ -1,4 +1,3 @@
-[TOC]
 
 ## 第一章：开发环境搭建
 
@@ -37,6 +36,18 @@
 > 新建一个Django项目，默认结构是：
 
 ```
+❯ django-admin startproject Helloworld
+
+❯ tree Helloworld 
+Helloworld
+├── Helloworld
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+
+1 directory, 5 files
 
 ```
 
